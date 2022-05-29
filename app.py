@@ -7,7 +7,6 @@ from helper import Helper
 st.set_page_config(
     page_title="Book Recommender System",
     page_icon="assets/icon.png",
-    layout="wide",
     menu_items={
         "about": "Hi there, thanks for checking out my app! feel free to checkout my [GitHub](https://www.github.com/kameshkotwani) page lets collaborate!"
     }

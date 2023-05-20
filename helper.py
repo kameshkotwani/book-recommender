@@ -3,13 +3,13 @@ import numpy as np
 # contains the class to preprocess the data and send to the main app
 class Helper:
     def __init__(self):
-        with open('models/popular.pkl','rb') as f:
+        with open('./models/popular.pkl','rb') as f:
             self._popular_df_books = load(f)
-        with open('models/books.pkl','rb') as f:
+        with open('./models/books.pkl','rb') as f:
             self._books_df = load(f)
-        with open('models/pt.pkl','rb') as f:
+        with open('./models/pt.pkl','rb') as f:
             self._pt = load(f)
-        with open('models/similarity_score.pkl','rb') as f:
+        with open('./models/similarity_score.pkl','rb') as f:
             self._books_options = load(f)
         # self._books_df:pd.DataFrame = load()
         # self._pt:pd.DataFrame = load()

@@ -1,5 +1,3 @@
-import copy
-from socket import herror
 import streamlit as st
 from helper import Helper
 
@@ -13,14 +11,11 @@ st.set_page_config(
 )
 
 try:
+    helper = Helper()
     @st.cache()
     def load_popular_books():
-        helper = Helper()
         return helper.get_popular_books()
     
-    helper = Helper()
-    
-
     books_name,author,image,votes,rating = load_popular_books()
     book_options = helper.get_book_list()
     book_options.insert(0,None)
@@ -66,5 +61,4 @@ try:
         else:
             st.subheader("Go ahead, search a book and read books similar to the one you loved!")            
 except Exception as e:
-    print(e)
     st.info("perhaps, you are a unique user and we were not able to find book similar to yours.")

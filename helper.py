@@ -1,13 +1,19 @@
-import joblib
-import pandas as pd
+from pickle import load
 import numpy as np
 # contains the class to preprocess the data and send to the main app
 class Helper:
     def __init__(self):
-        self._popular_df_books:pd.DataFrame = joblib.load('models/v2_popular_books.joblib')
-        self._books_df:pd.DataFrame = joblib.load('models/books.joblib')
-        self._pt:pd.DataFrame = joblib.load('models/pt.joblib')
-        self._similarity_score:pd.DataFrame = joblib.load('models/similarity_score.joblib')
+        with open('models/popular.pkl','rb') as f:
+            self._popular_df_books = load(f)
+        with open('models/books.pkl','rb') as f:
+            self._books_df = load(f)
+        with open('models/pt.pkl','rb') as f:
+            self._pt = load(f)
+        with open('models/similarity_score.pkl','rb') as f:
+            self._books_options = load(f)
+        # self._books_df:pd.DataFrame = load()
+        # self._pt:pd.DataFrame = load()
+        # self._similarity_score:pd.DataFrame = load()
         self._books_options:list = self._pt.index.tolist()
 
     def get_book_list(self)->list:

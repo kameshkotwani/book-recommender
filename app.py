@@ -61,4 +61,5 @@ try:
         else:
             st.subheader("Go ahead, search a book and read books similar to the one you loved!")            
 except Exception as e:
-    st.info("perhaps, you are a unique user and we were not able to find book similar to yours.")
+    st.write(e)
+    st.warning("I am currently working on fixing pandas old module error, as it has broken up the application should be up soon.")
